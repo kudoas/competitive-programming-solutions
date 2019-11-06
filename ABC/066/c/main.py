@@ -1,0 +1,6 @@
+n = int(input())
+A = list(map(int, input().split()))
+print(A)
+print(A[::-1])
+print(A[::-2])
+print(A[n % 2::2])
