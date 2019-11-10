@@ -1,15 +1,10 @@
-from collections import defaultdict
-d = defaultdict(int)
+n = int(input())
+ss = [input() for _ in range(n)]
+m = int(input())
+tt = [input() for _ in range(m)]
+ans = 0
 
-N = int(input())
-for _ in range(N):
-    d[input()] += 1
+for s in ss:
+    ans = max(ans, (ss.count(s)-tt.count(s)))
 
-M = int(input())
-for _ in range(M):
-    d[input()] -= 1
-
-answer = max(d.values())
-if answer < 0:
-    answer = 0
-print(answer)
+print(ans)
