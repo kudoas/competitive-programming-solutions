@@ -1,22 +1,20 @@
 n = int(input())
+ls = []
 
 
-def make_divisors(n):
-    divisors = []
-    for i in range(1, int(n**0.5)+1):
-        if n % i == 0:
-            divisors.append(i)
-            if i != n // i:
-                divisors.append(n//i)
-    divisors.sort()
-    return divisors
+for i in range(1, int(n**0.5)+1):
+    if n % i == 0:
+        ls.append(i)
+        if i != n // i:
+            ls.append(n//i)
+ls.sort()
 
 
-r = make_divisors(n)
+i = len(ls)//2
+j = i-1
 
-if len(r) % 2 == 1:
-    a = r[len(r)//2]
-    print((a-1)+(a-1))
-else:
-    a = int(len(r)/2)
-    print((r[a-1]-1)+(r[a]-1))
+if len(ls) % 2 == 1:
+    print(ls[i]-1+ls[i]-1)
+    exit()
+
+print(ls[i]-1+ls[j]-1)
