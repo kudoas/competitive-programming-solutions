@@ -1,0 +1,12 @@
+N = int(input())
+S = input()
+cnt = 0
+
+for i in range(N-2):
+    if S[i] + S[i+1] + S[i+2] == 'ABC':
+        cnt += 1
+
+print(cnt)
+
+# count: 該当するコードを全てカウントしてくれる
+# print(S.count('ABC'))
