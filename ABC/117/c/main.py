@@ -1,18 +1,21 @@
-N, M = map(int, input().split())
-X = list(map(int, input().split()))
+n, m = map(int, input().split())
+x = list(map(int, input().split()))
 
-diff = []
+if n >= len(x):
+    print(0)
+    exit()
 
-for i in range(M-1):
-    if X[i+1] < X[i]:
-        num = (X[i+1] - X[i])*-1
-        diff.append(num)
-    else:
-        diff.append(X[i+1] - X[i])
+ls = []
+x.sort()
 
-print(diff)
+for i in range(m-1):
+    diff = x[i+1] - x[i]
+    ls.append(diff)
 
-# for _ in range(N):
-#     diff.remove(max(diff))
+ls.sort(reverse=True)
+ans = sum(ls)
 
-print(sum(diff))
+for i in range(n-1):
+    ans -= ls[i]
+
+print(ans)
