@@ -1,7 +1,12 @@
-# mod2019の最小値=2019で割った時の余りの最小値
-# 余りのパターンは0から2018までの2018通り
-
 L, R = map(int, input().split())
 
+ans = 2018
+for i in range(L, R):
+    for j in range(i+1, R+1):
+        cnt = i*j % 2019
+        if cnt == 0:
+            print(0)
+            exit()
+        ans = min(cnt, ans)
 
-print(answer)
+print(ans)
