@@ -1,4 +1,2 @@
-#! /usr/bin/env python3
-n, l = map(int, input().split())
-s = sorted([input() for i in range(n)])
-print(*s, sep="")
+abc = list(map(int, input().split()))
+print('YES' if abc.count(5) == 2 and abc.count(7) == 1 else 'NO')
