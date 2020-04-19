@@ -1,16 +1,16 @@
 n = int(input())
-ls = [int(input()) for _ in range(n)]
-ans = float('inf')
+t = [int(input()) for _ in range(n)]
 
+ans = 10**9
 for i in range(2**n):
-    a = 0
-    b = 0
-
+    cnt1 = 0
+    cnt2 = 0
     for j in range(n):
-        if ((i >> j) & 1):
-            a += ls[j]
+        if (i >> j & 1):
+            cnt1 += t[j]
         else:
-            b += ls[j]
-    ans = min(ans, max(a, b))
+            cnt2 += t[j]
+        cnt = max(cnt1, cnt2)
+    ans = min(ans, cnt)
 
 print(ans)
