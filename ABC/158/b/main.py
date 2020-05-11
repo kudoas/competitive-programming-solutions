@@ -1,4 +1,3 @@
 n, a, b = map(int, input().split())
-
-answer = n // (a+b) * a + min((n % (a+b)), a)
-print(answer)
+ans = (n // (a+b))*a + min(a, (n % (a+b)))
+print(ans)
