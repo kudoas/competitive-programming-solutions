@@ -3,10 +3,6 @@ from math import factorial
 
 n = int(input())
 
-if n == 1:
-    print(0)
-    exit()
-
 
 def factorization(n):
     arr = []
@@ -18,15 +14,16 @@ def factorization(n):
                 cnt += 1
                 temp //= i
             arr.append([i, cnt])
-
     if temp != 1:
         arr.append([temp, 1])
-
     if arr == []:
         arr.append([n, 1])
-
     return arr
 
+
+if n == 1:
+    print(0)
+    exit()
 
 ls = factorization(n)
 ans = 0
