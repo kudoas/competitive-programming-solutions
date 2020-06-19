@@ -10,5 +10,3 @@ for i in range(n):
 for l in ls:
     if l >= 0:
         cnt += l
-
-print(cnt)
