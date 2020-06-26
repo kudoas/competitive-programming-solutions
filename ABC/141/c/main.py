@@ -1,15 +1,10 @@
+from collections import Counter
+
 n, k, q = map(int, input().split())
-
-menber = [0]*n
-if q-k >= 0:
-    for i in range(q):
-        ans = int(input())
-        menber[ans-1] += 1
-else:
-    menber = [100000]*n
-
-for j in menber:
-    if j >＝ q-k:
-        print('Yes')
-    else:
+A = [int(input()) for _ in range(q)]
+C = Counter(A)
+for i in range(1, n+1):
+    if C[i] + k - q <= 0:
         print('No')
+    else:
+        print('Yes')
