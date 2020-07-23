@@ -1,6 +1,8 @@
 N = int(input())
-S = list(input())
-alphabet = [chr(ord('a') + i) for i in range(26)]
-
+S = input()
+alphabet = 'abcdefghijklmnopqrstuvwxyz'.upper()
+ans = ''
 for s in S:
-    ((alphabet.index(s))+26) % N
+    next = (alphabet.index(s)+N) % 26
+    ans += alphabet[next]
+print(ans)
